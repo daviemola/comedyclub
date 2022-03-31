@@ -13,9 +13,8 @@ const Home = ({ shows }) => {
         <SearchForm />
         <ResultsWrapper>
           {shows.map((show) => (
-            <SingleResult key={show.id} show={show} />
+            <SingleResult show={show} key={show.id} />
           ))}
-          {/* <SingleResult shows={shows} /> */}
         </ResultsWrapper>
       </Layout>
     </>

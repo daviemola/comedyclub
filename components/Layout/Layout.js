@@ -7,11 +7,11 @@ import Router from "next/router";
 export default function Layout({ children }) {
   const [loading, setLoading] = React.useState(false);
 
-  Router.events.on("routeChangeStart", (url) => {
+  Router.events.on("routeChangeStart", () => {
     setLoading(true);
   });
 
-  Router.events.on("routeChangeComplete", (url) => {
+  Router.events.on("routeChangeComplete", () => {
     setLoading(false);
   });
 
