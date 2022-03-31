@@ -24,8 +24,8 @@ export default function SingleResult({ show }) {
             <p>{`${show.city} · ${show.venue}`}</p>
             <p>{show.desc}</p>
             <ul>
-              {show.performers.map((show) => (
-                <li key={show.id}>
+              {show.performers.map((show, index) => (
+                <li key={index}>
                   <a href="#">
                     <div className="result-img">
                       <img src={show.image} alt="Image" />
