@@ -21,14 +21,14 @@ export default function Layout({ children }) {
         <title>Comedy Grind - Home</title>
         <meta property="og:title" content="My page title" key="title" />
       </Head>
-      {loading && (
+      {/* {loading && (
         <div className="preloader">
           <div className="lds-ripple">
             <div></div>
             <div></div>
           </div>
         </div>
-      )}
+      )} */}
       <Navbar />
       {children}
       <Footer />

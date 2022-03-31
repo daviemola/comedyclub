@@ -43,8 +43,8 @@ const FeaturedShows = ({ shows, title }) => {
             modules={[Pagination]}
             className="mySwiper"
           >
-            {shows.map((show) => (
-              <SwiperSlide key={show.id} className="mb-4">
+            {shows.map((show, index) => (
+              <SwiperSlide key={index} className="mb-4">
                 <div className="mb-2">
                   <div className="single-featured wow fadeInUp delay-0-2s">
                     <a href="#">

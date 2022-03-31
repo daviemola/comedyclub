@@ -42,8 +42,8 @@ const UpcomingShows = ({ shows, title }) => {
             modules={[Pagination]}
             className="mySwiper"
           >
-            {shows.map((show) => (
-              <SwiperSlide key={show.id} className="mb-4">
+            {shows.map((show, index) => (
+              <SwiperSlide key={index} className="mb-4">
                 <div>
                   <div className="single-upcoming wow fadeInUp delay-0-2s">
                     <a href="#">
