@@ -34,7 +34,6 @@
 
   // Menu Icon JS
   $(".menu-icon").on("click", function () {
-    console.log("menu open");
     $(this).toggleClass("active");
   });
 
