@@ -4,16 +4,15 @@ export default function SearchResult({ shows }) {
   // console.log(shows.data.length);
   return (
     <>
-      {shows.data.map((show) => {
-        console.log(`${show.attributes.photo_url}`);
+      {shows.map((show, index) => {
         return (
-          <div className="single-result wow fadeInUp delay-0-2s" key={show.id}>
+          <div className="single-result wow fadeInUp delay-0-2s" key={index}>
             <div className="row align-items-center">
               <div className="col-xl-6 pr-0">
                 <div className="results-img">
                   <a href="#">
                     <img
-                      src={`${show.attributes.photo_url}`}
+                      src={`${show.image}`}
                       alt="Image"
                       style={{ height: "501px" }}
                     />
@@ -27,9 +26,9 @@ export default function SearchResult({ shows }) {
                     <i className="fa fa-calendar-o"></i> NOV 25, 2021
                   </span>
                   <h3>
-                    <a href="#">{show.attributes.name}</a>
+                    <a href="#">{show.name}</a>
                   </h3>
-                  <p>{`${show.attributes.city} · ${show.attributes.venue}`}</p>
+                  <p>{`${show.city} · ${show.venue}`}</p>
                   <p>
                     Amet nulla facilisi morbi tempus iaculis urna id volutpat.
                     Placerat orci nulla pellentesque dignissim enim sit amet
@@ -37,16 +36,16 @@ export default function SearchResult({ shows }) {
                     malesuada bibendum arcu vitae.
                   </p>
                   <ul>
-                    {show.attributes.performers.data.map((show) => (
-                      <li key={show.id}>
+                    {show.performers.map((show, index) => (
+                      <li key={index}>
                         <a href="#">
                           <div className="result-img">
-                            <img src={`${show.attributes.image}`} alt="Image" />
+                            <img src={`${show.image}`} alt="Image" />
                           </div>
                           <span>
-                            {show.attributes.name.split(" ")[0]}
+                            {show.name.split(" ")[0]}
                             <br />
-                            {show.attributes.name.split(" ")[1]}
+                            {show.name.split(" ")[1]}
                           </span>
                         </a>
                       </li>

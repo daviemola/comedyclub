@@ -5,7 +5,8 @@ import "react-datepicker/dist/react-datepicker.css";
 
 export default function SearchForm() {
   const [zipcode, setZipcode] = useState("");
-  const [artists, setArtists] = useState("");
+  const [city, setCity] = useState("");
+  // const [artists, setArtists] = useState("");
   const [dateRange, setDateRange] = useState([null, null]);
   const [startDate, endDate] = dateRange;
   const router = useRouter();
@@ -16,11 +17,14 @@ export default function SearchForm() {
     // console.log(artists);
     // console.log(startDate);
     // console.log(endDate);
-    //redirect the user to the search page
     // router.push(
     //   `/results/search?zipcode=${zipcode}&performers=${artists}&start=${startDate}&end=${endDate}`
     // );
-    // router.push(`/results/search?zipcode=${zipcode}`);
+
+    //redirect the user to the search page
+    router.push(`/results/search?zipcode=${zipcode}`);
+    setCity("");
+    setZipcode("");
   };
 
   return (
@@ -33,7 +37,7 @@ export default function SearchForm() {
                 <div className="select-blk">
                   <input
                     type="text"
-                    placeholder="City or Zip Code"
+                    placeholder="Search Zip Code"
                     value={zipcode}
                     onChange={(e) => setZipcode(e.target.value)}
                   />
@@ -44,8 +48,10 @@ export default function SearchForm() {
               <div className="col-lg-3">
                 <div className="form-group for-mobile">
                   <DatePicker
+                    style={{ zIndex: "999" }}
                     selectsRange={true}
                     startDate={startDate}
+                    minDate={new Date()}
                     endDate={endDate}
                     onChange={(update) => {
                       setDateRange(update);
@@ -61,10 +67,12 @@ export default function SearchForm() {
                 <div className="form-group for-mobile">
                   <input
                     type="text"
-                    value={artists}
-                    onChange={(e) => setArtists(e.target.value)}
+                    // value={artists}
+                    value={city}
+                    // onChange={(e) => setArtists(e.target.value)}
+                    onChange={(e) => setCity(e.target.value)}
                     className="form-control border-none"
-                    placeholder="Search for artists, come..."
+                    placeholder="Search City"
                   />
                   <i className="fa fa-search"></i>
                 </div>
