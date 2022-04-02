@@ -5,8 +5,6 @@ import ResultsWrapper from "../../components/Results/ResultsWrapper";
 import SearchResult from "../../components/Results/SearchResult";
 
 const Home = ({ shows, featuredShows }) => {
-  console.log(shows);
-  //   shows.data.map((show) => console.log(show));
   const title = "";
   return (
     <>

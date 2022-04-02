@@ -2,8 +2,18 @@ import React from "react";
 
 export default function SearchResult({ shows }) {
   // console.log(shows.data.length);
+  // console.log(shows.length);
   return (
     <>
+      {shows.length === 0 && (
+        <div className="wow fadeInUp delay-0-2s">
+          <div className="">
+            <div className="">
+              <h5>No Results to Show</h5>
+            </div>
+          </div>
+        </div>
+      )}
       {shows.map((show, index) => {
         return (
           <div className="single-result wow fadeInUp delay-0-2s" key={index}>
