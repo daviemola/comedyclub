@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Pagination, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -21,8 +21,14 @@ const FeaturedShows = ({ shows, title }) => {
 
         <div className="row justify-content-center mx-1">
           <Swiper
+            style={{
+              "--swiper-navigation-color": "#fff",
+              "--swiper-pagination-color": "#301434",
+            }}
             slidesPerView={3}
             spaceBetween={30}
+            navigation={true}
+            modules={[Navigation, Pagination]}
             pagination={{
               clickable: true,
             }}
@@ -40,14 +46,13 @@ const FeaturedShows = ({ shows, title }) => {
                 spaceBetween: 50,
               },
             }}
-            modules={[Pagination]}
             className="mySwiper"
           >
             {shows.map((show, index) => (
               <SwiperSlide key={index} className="mb-4">
                 <div className="mb-2">
                   <div className="single-featured wow fadeInUp delay-0-2s">
-                    <a href="#">
+                    <a>
                       <img src={`${show.image}`} alt="Image" />
                     </a>
                     <div className="up-coming-content">
@@ -62,9 +67,8 @@ const FeaturedShows = ({ shows, title }) => {
               </SwiperSlide>
             ))}
           </Swiper>
-
           <div className="col-12">
-            <Link href="#">
+            <Link href="/results/performers">
               <a className="read-more for-d-none">See All</a>
             </Link>
           </div>

@@ -2,17 +2,19 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import toast from "react-hot-toast";
 
 export default function SearchForm() {
   const [zipcode, setZipcode] = useState("");
   const [city, setCity] = useState("");
   // const [artists, setArtists] = useState("");
-  const [dateRange, setDateRange] = useState([null, null]);
+  const [dateRange, setDateRange] = useState([new Date(), new Date()]);
   const [startDate, endDate] = dateRange;
   const router = useRouter();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     // console.log(zipcode);
     // console.log(artists);
     // console.log(startDate);
@@ -39,6 +41,7 @@ export default function SearchForm() {
                     type="text"
                     placeholder="Search Zip Code"
                     value={zipcode}
+                    minLength="3"
                     onChange={(e) => setZipcode(e.target.value)}
                   />
                   <i className="fa fa-angle-down"></i>
@@ -46,17 +49,18 @@ export default function SearchForm() {
                 </div>
               </div>
               <div className="col-lg-3">
-                <div className="form-group for-mobile">
+                <div className="form-group">
                   <DatePicker
-                    style={{ zIndex: "999" }}
+                    dateFormat="MM/dd/yyyy"
                     selectsRange={true}
                     startDate={startDate}
+                    selectsStart
                     minDate={new Date()}
                     endDate={endDate}
                     onChange={(update) => {
                       setDateRange(update);
                     }}
-                    placeholderText="Select a Date Range"
+                    // placeholderText="Select a Date Range"
                     className="form-control"
                   />
                   <i className="fa fa-calendar-o"></i>
@@ -64,11 +68,12 @@ export default function SearchForm() {
                 </div>
               </div>
               <div className="col-lg-6">
-                <div className="form-group for-mobile">
+                <div className="form-group">
                   <input
                     type="text"
                     // value={artists}
                     value={city}
+                    minLength="3"
                     // onChange={(e) => setArtists(e.target.value)}
                     onChange={(e) => setCity(e.target.value)}
                     className="form-control border-none"

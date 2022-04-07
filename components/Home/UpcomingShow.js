@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { FunctionComponent } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Pagination, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -20,8 +20,14 @@ const UpcomingShows = ({ shows, title }) => {
         </div>
         <div className="row justify-content-center mx-1">
           <Swiper
+            style={{
+              "--swiper-navigation-color": "#301434",
+              "--swiper-pagination-color": "#301434",
+            }}
             slidesPerView={3}
             spaceBetween={30}
+            navigation={true}
+            modules={[Navigation, Pagination]}
             pagination={{
               clickable: true,
             }}
@@ -39,7 +45,6 @@ const UpcomingShows = ({ shows, title }) => {
                 spaceBetween: 50,
               },
             }}
-            modules={[Pagination]}
             className="mySwiper"
           >
             {shows.map((show, index) => (
@@ -47,7 +52,11 @@ const UpcomingShows = ({ shows, title }) => {
                 <div>
                   <div className="single-upcoming wow fadeInUp delay-0-2s">
                     <a href="#">
-                      <img src={`${show.image}`} alt="Image" />
+                      <img
+                        src={`${show.image}`}
+                        alt="Image"
+                        style={{ zIndex: 1 }}
+                      />
                     </a>
                     <div className="up-coming-content">
                       <span>
@@ -67,9 +76,9 @@ const UpcomingShows = ({ shows, title }) => {
             ))}
           </Swiper>
           <div className="col-12">
-            <a href="#" className="read-more for-d-none">
-              See All
-            </a>
+            <Link href="/results">
+              <a className="read-more for-d-none">See All</a>
+            </Link>
           </div>
         </div>
       </div>
