@@ -2,22 +2,20 @@ import React from "react";
 import Image from "next/image";
 
 export default function SingleResult({ show }) {
+  console.log(show);
   return (
     <div className="single-result wow fadeInUp delay-0-6s">
-      <div className="row align-items-center">
-        <div className="col-xl-6 pr-0">
-          <div className="results-img">
-            <a href="#">
-              <img
-                src={`${show.external_image_link}`}
-                alt="Image"
-                style={{ height: "501px" }}
-              />
-            </a>
-            <span>Thursday 9:30 pm</span>
-          </div>
+      <div className="row-results row align-items-center">
+        <div className="col-xl-6 pr-0 res-image">
+          <Image
+            src={show.external_image_link}
+            layout="fill"
+            alt={show.show_title}
+            className="image-result"
+          />
+          <span className="show-date">Thursday 9:30 pm</span>
         </div>
-        <div className="col-xl-6 pl-0">
+        <div className="col-xl-6 pl-0" style={{ maxHeight: "500.96px" }}>
           <div className="results-content">
             <span>
               <i className="fa fa-calendar-o"> </i> NOV 25, 2021{" "}
@@ -36,7 +34,13 @@ export default function SingleResult({ show }) {
               <li>
                 <a href="#">
                   <div className="result-img">
-                    <img src="assets/img/result/user-1.jpg" alt="Image" />
+                    {/* <img src="assets/img/result/user-1.jpg" alt="Image" /> */}
+                    <Image
+                      src={show.external_image_link}
+                      height={400}
+                      width={300}
+                      alt="image"
+                    />
                   </div>
                   <span>
                     Adam <br />

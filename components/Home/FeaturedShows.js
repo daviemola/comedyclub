@@ -32,6 +32,7 @@ const FeaturedShows = ({ shows, title }) => {
             pagination={{
               clickable: true,
             }}
+            // style={{ marginLeft: '80px', marginRight: '80px', position: 'unset' }}
             breakpoints={{
               0: {
                 slidesPerView: 1,

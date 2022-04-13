@@ -3,13 +3,14 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import toast from "react-hot-toast";
+import moment from "moment";
 
 export default function SearchForm() {
   const [zipcode, setZipcode] = useState("");
-  const [city, setCity] = useState("");
-  // const [artists, setArtists] = useState("");
+  const [artists, setArtists] = useState("");
   const [dateRange, setDateRange] = useState([new Date(), new Date()]);
   const [startDate, endDate] = dateRange;
+
   const router = useRouter();
 
   const handleSubmit = (e) => {
@@ -17,15 +18,19 @@ export default function SearchForm() {
 
     // console.log(zipcode);
     // console.log(artists);
-    // console.log(startDate);
-    // console.log(endDate);
-    // router.push(
-    //   `/results/search?zipcode=${zipcode}&performers=${artists}&start=${startDate}&end=${endDate}`
-    // );
+    // console.log(moment(startDate).format("YYYY-MM-DD"));
+    // console.log(moment(endDate).format("YYYY-MM-DD"));
+    router.push(
+      `/results/search?zipcode=${zipcode > 0 ? zipcode : 0}&start=${moment(
+        startDate
+      ).format("YYYY-MM-DD")}&end=${moment(endDate).format(
+        "YYYY-MM-DD"
+      )}&performers=${artists}`
+    );
 
     //redirect the user to the search page
-    router.push(`/results/search?zipcode=${zipcode}`);
-    setCity("");
+    // router.push(`/results/search?zipcode=${zipcode}`);
+    setArtists("");
     setZipcode("");
   };
 
@@ -52,7 +57,7 @@ export default function SearchForm() {
                 <div className="form-group">
                   <DatePicker
                     dateFormat="MM/dd/yyyy"
-                    selectsRange={true}
+                    selectsRange
                     startDate={startDate}
                     selectsStart
                     minDate={new Date()}
@@ -60,7 +65,6 @@ export default function SearchForm() {
                     onChange={(update) => {
                       setDateRange(update);
                     }}
-                    // placeholderText="Select a Date Range"
                     className="form-control"
                   />
                   <i className="fa fa-calendar-o"></i>
@@ -71,13 +75,11 @@ export default function SearchForm() {
                 <div className="form-group">
                   <input
                     type="text"
-                    // value={artists}
-                    value={city}
+                    value={artists}
                     minLength="3"
-                    // onChange={(e) => setArtists(e.target.value)}
-                    onChange={(e) => setCity(e.target.value)}
+                    onChange={(e) => setArtists(e.target.value)}
                     className="form-control border-none"
-                    placeholder="Search City"
+                    placeholder="  Search show name, artists..."
                   />
                   <i className="fa fa-search"></i>
                 </div>

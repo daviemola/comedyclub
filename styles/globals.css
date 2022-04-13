@@ -1,0 +1,16 @@
+.react-datepicker__navigation {
+  overflow: inherit;
+}
+
+.react-datepicker__navigation-icon {
+  width: 100%;
+}
+
+.react-datepicker__navigation-icon--previous::before {
+  left: 10px;
+}
+
+.react-datepicker__navigation-icon--next::before {
+  right: 10px;
+  left: auto;
+}

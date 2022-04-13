@@ -7,9 +7,10 @@ import { motion } from "framer-motion";
 const https = require("https");
 
 const Home = ({ shows }) => {
-  // console.log(shows);
+  let show = shows.success.slice(0, 5);
+  console.log(show);
   // shows.success.map((shoe) => console.log(shoe));
-  console.log(shows.success);
+  // console.log(shows.success);
   const title = "";
   return (
     <motion.div initial="initial" animate="animate" exit={{ opacity: 0 }}>
@@ -17,7 +18,7 @@ const Home = ({ shows }) => {
         <Banner title={title} />
         <SearchForm />
         <ResultsWrapper>
-          {shows.success.map((show) => (
+          {shows.success.slice(0, 10).map((show) => (
             <SingleResult show={show} key={show.id} />
           ))}
         </ResultsWrapper>

@@ -870,7 +870,22 @@ Result Area Style
   border-radius: 10px 0 0 10px;
 }
 
-.single-result .results-img span {
+.image-result {
+  border-radius: 10px 0 0 10px;
+}
+
+/* .single-result .results-img span {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  background-color: #171616;
+  color: #ffffff;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 5px 20px;
+} */
+
+.show-date {
   position: absolute;
   top: 30px;
   left: 30px;
