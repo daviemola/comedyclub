@@ -1,16 +1,33 @@
-.react-datepicker__navigation {
-  overflow: inherit;
+.form-group-date {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 0;
 }
 
-.react-datepicker__navigation-icon {
-  width: 100%;
+.form-group::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -22px;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
-.react-datepicker__navigation-icon--previous::before {
-  left: 10px;
+.form-group-date .form-control {
+  border: none;
+  height: 80px;
 }
 
-.react-datepicker__navigation-icon--next::before {
-  right: 10px;
-  left: auto;
+.form-group-date i {
+  position: absolute;
+  top: 31px;
+  left: 21px;
+}
+
+.form-group-date-span {
+  position: absolute;
+  top: 32px;
+  right: 0;
+  font-weight: 600;
 }

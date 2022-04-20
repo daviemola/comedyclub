@@ -7,14 +7,14 @@ const https = require("https");
 
 const Home = ({ shows, featuredShows }) => {
   const title = "";
-  // console.log(shows);
+  console.log(shows);
   return (
     <>
       <Layout>
         <Banner title={title} />
         <SearchForm />
         <ResultsWrapper>
-          <SearchResult shows={shows} />
+          <SearchResult data={shows} />
         </ResultsWrapper>
       </Layout>
     </>
@@ -34,7 +34,9 @@ export async function getServerSideProps({
 
   const res = await fetch(
     // `https://doingtimeapp.com/api/v1/show/getshowswebform/${start}/${end}/${zipcode}/${performers}`,
-    `https://doingtimeapp.com/api/v1/show/getshowswebform/2021-12-23/2022-04-23/0/Demetri`,
+    // `https://doingtimeapp.com/api/v1/show/getshowswebform/2021-12-23/2022-04-23/0/Demetri`,
+    `https://doingtimeapp.com/api/v1/show/getshowswebformTEST/2021-12-23/2022-04-23/0/king/?page=2`,
+    // `https://doingtimeapp.com/api/v1/show/getshowswebformTEST/2021-12-23/2022-04-23/0/king/0`,
     {
       method: "GET",
       headers: {
@@ -44,7 +46,7 @@ export async function getServerSideProps({
     }
   );
 
-  console.log(await res);
+  // console.log(await res);
   const shows = await res.json();
   // console.log(shows.success.length);
 

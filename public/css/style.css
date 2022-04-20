@@ -971,6 +971,17 @@ Result Area Style
   color: #713888;
 }
 
+.result-images {
+  border-radius: 50px;
+  width: 65px;
+  height: 65px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
 .add-img {
   margin-bottom: 60px;
 }

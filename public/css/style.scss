@@ -757,9 +757,10 @@ Result Area Style
         &:last-child {
           margin-right: 0;
         }
-        .result-img {
-          width: 65px;
-          height: 65px;
+        .result-images {
+          width: 200px;
+          height: 650px;
+          -o-object-fit: cover;
           object-fit: cover;
           text-align: center;
           margin: auto;

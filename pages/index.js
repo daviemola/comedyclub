@@ -21,6 +21,14 @@ const Home = ({ shows, featuredShows }) => {
 };
 
 export async function getStaticProps() {
+  // fetch users data
+  // const locResults = await fetch(
+  //   "https://geolocation-db.com/json/0f761a30-fe14-11e9-b59f-e53803842572"
+  // );
+
+  // const location = await locResults.json();
+  // console.log(location);
+
   //Fetch for shows
   const res = await fetch(
     "https://my-json-server.typicode.com/daviemola/fakecomedyjson/upcoming_shows?_limit=5"

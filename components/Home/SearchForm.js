@@ -54,12 +54,13 @@ export default function SearchForm() {
                 </div>
               </div>
               <div className="col-lg-3">
-                <div className="form-group">
+                <div className="form-group-date">
                   <DatePicker
                     dateFormat="MM/dd/yyyy"
                     selectsRange
                     startDate={startDate}
                     selectsStart
+                    popperPlacement="top-start"
                     minDate={new Date()}
                     endDate={endDate}
                     onChange={(update) => {
@@ -68,7 +69,7 @@ export default function SearchForm() {
                     className="form-control"
                   />
                   <i className="fa fa-calendar-o"></i>
-                  <span className="fa fa-angle-down"></span>
+                  {/* <span className="fa fa-angle-down form-group-date"></span> */}
                 </div>
               </div>
               <div className="col-lg-6">

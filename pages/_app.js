@@ -1,5 +1,6 @@
 import React from "react";
 import App from "next/app";
+import "../styles/globals.css";
 import { AnimatePresence } from "framer-motion";
 import { Toaster } from "react-hot-toast";
 
