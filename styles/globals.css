@@ -31,3 +31,17 @@
   right: 0;
   font-weight: 600;
 }
+
+.btn-pagination {
+  /* margin-x: 8px; */
+  margin-right: 16px;
+  padding: 16px 32px;
+  background: #713888;
+  border-radius: 12px;
+  color: #fff;
+}
+
+.btn-pagination:hover {
+  background: #171616;
+  color: #fff;
+}

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@badrap/bar-of-progress": "^0.1.2",
     "framer-motion": "^6.2.8",
     "moment": "^2.29.2",
     "next": "12.1.0",

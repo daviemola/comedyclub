@@ -7,7 +7,6 @@ const https = require("https");
 
 const Home = ({ shows, featuredShows }) => {
   const title = "";
-  console.log(shows);
   return (
     <>
       <Layout>
@@ -22,7 +21,7 @@ const Home = ({ shows, featuredShows }) => {
 };
 
 export async function getServerSideProps({
-  query: { performers, zipcode, start, end },
+  query: { performers, zipcode, start, end, page },
 }) {
   //Fetch for shows using queries
   //include performers startDate endDate, zipcode, performers etc in the query based on the backend url
@@ -31,12 +30,11 @@ export async function getServerSideProps({
   const httpsAgent = new https.Agent({
     rejectUnauthorized: false,
   });
-
   const res = await fetch(
     // `https://doingtimeapp.com/api/v1/show/getshowswebform/${start}/${end}/${zipcode}/${performers}`,
     // `https://doingtimeapp.com/api/v1/show/getshowswebform/2021-12-23/2022-04-23/0/Demetri`,
-    `https://doingtimeapp.com/api/v1/show/getshowswebformTEST/2021-12-23/2022-04-23/0/king/?page=2`,
-    // `https://doingtimeapp.com/api/v1/show/getshowswebformTEST/2021-12-23/2022-04-23/0/king/0`,
+    // `https://doingtimeapp.com/api/v1/show/getshowswebformTEST/2021-12-23/2022-04-23/0/king/?page=3`,
+    `https://doingtimeapp.com/api/v1/show/getshowswebformTEST/2021-12-23/2022-04-23/0/king/?page=${page}`,
     {
       method: "GET",
       headers: {
@@ -46,9 +44,7 @@ export async function getServerSideProps({
     }
   );
 
-  // console.log(await res);
   const shows = await res.json();
-  // console.log(shows.success.length);
 
   //return props
   return {
