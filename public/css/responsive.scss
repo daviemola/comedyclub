@@ -437,8 +437,16 @@
 
 /*
 Continuer Custom Width Area Style*/
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1280px) {
   .container {
     max-width: 1280px;
+  }
+
+  .display-none {
+    display: hidden;
+  }
+
+  .display-block {
+    display: block;
   }
 }

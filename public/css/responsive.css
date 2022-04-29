@@ -325,6 +325,18 @@
   .res-image {
     min-height: 501px;
   }
+
+  .bg-gradient {
+    position: "relative";
+    height: "450px";
+    max-height: "501px";
+    display: "flex";
+    justify-content: "center";
+    align-items: "center";
+    margin: "auto";
+    background-image: linear-gradient(red, yellow);
+    /* background-image: linear-gradient(to right, #251b4d, #713888); */
+  }
 }
 
 /* Only Mobil Menu Max width 991px */
@@ -434,12 +446,23 @@
 /*
 Continuer Custom Width Area Style*/
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1280px) {
   .container {
     max-width: 1280px;
   }
   .res-image {
     min-height: 501px;
+  }
+
+  .bg-gradient {
+    position: "relative";
+    height: "450px";
+    max-height: "501px";
+    display: "flex";
+    justify-content: "center";
+    align-items: "center";
+    margin: "auto";
+    background-image: linear-gradient(to right, #251b4d, #713888);
   }
 }
 
@@ -490,17 +513,37 @@ Continuer Custom Width Area Style*/
   color: gray;
 }
 
-.react-datepicker__navigation--previous {
-  left: 10px;
-  border-right-color: #ccc;
+.rm-pd {
+  padding: 0 !important;
 }
-.react-datepicker__navigation {
-  line-height: 1.7rem;
-  text-align: center;
-  cursor: pointer;
-  position: absolute;
-  top: 10px;
-  width: 0;
-  border: 0.45rem solid transparent;
-  z-index: 1;
+
+@media (min-width: 670px) and (max-width: 1200px) {
+  .display-block {
+    display: none;
+  }
+  .display-none {
+    display: block;
+  }
+}
+
+@media (max-width: 670px) {
+  .display-block {
+    display: block;
+  }
+  .display-none {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .display-block {
+    display: block;
+  }
+  .display-none {
+    display: none;
+  }
+
+  .maxheight {
+    max-height: 500px;
+  }
 }

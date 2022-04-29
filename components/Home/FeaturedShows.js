@@ -27,7 +27,7 @@ const FeaturedShows = ({ shows, title }) => {
         <div className="container">
           <div className="section-title left-title">
             <h2>{title}</h2>
-            <Link href="/results">
+            <Link href="/results/performers">
               <a className="read-more">
                 See All <i className="fa fa-angle-right"></i>
               </a>

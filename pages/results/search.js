@@ -5,7 +5,8 @@ import ResultsWrapper from "../../components/Results/ResultsWrapper";
 import SearchResult from "../../components/Results/SearchResult";
 const https = require("https");
 
-const Home = ({ shows, featuredShows }) => {
+const Home = ({ shows }) => {
+  console.log(shows);
   const title = "";
   return (
     <>
@@ -31,10 +32,10 @@ export async function getServerSideProps({
     rejectUnauthorized: false,
   });
   const res = await fetch(
-    // `https://doingtimeapp.com/api/v1/show/getshowswebform/${start}/${end}/${zipcode}/${performers}`,
+    `https://doingtimeapp.com/api/v1/show/getshowswebformTEST/${start}/${end}/${zipcode}/${performers}/?page=${page}`,
     // `https://doingtimeapp.com/api/v1/show/getshowswebform/2021-12-23/2022-04-23/0/Demetri`,
     // `https://doingtimeapp.com/api/v1/show/getshowswebformTEST/2021-12-23/2022-04-23/0/king/?page=3`,
-    `https://doingtimeapp.com/api/v1/show/getshowswebformTEST/2021-12-23/2022-04-23/0/king/?page=${page}`,
+    // `https://doingtimeapp.com/api/v1/show/getshowswebformTEST/2021-12-23/2022-04-23/0/king/?page=${page}`,
     {
       method: "GET",
       headers: {

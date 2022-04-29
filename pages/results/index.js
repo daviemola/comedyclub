@@ -8,7 +8,7 @@ const https = require("https");
 
 const Home = ({ shows }) => {
   let show = shows.success.slice(0, 5);
-  console.log(show);
+  console.log(shows);
   // shows.success.map((shoe) => console.log(shoe));
   // console.log(shows.success);
   const title = "";
@@ -18,9 +18,7 @@ const Home = ({ shows }) => {
         <Banner title={title} />
         <SearchForm />
         <ResultsWrapper>
-          {shows.success.slice(0, 10).map((show) => (
-            <SingleResult show={show} key={show.id} />
-          ))}
+          <SingleResult shows={shows.success.slice(0, 5)} key={show.id} />
         </ResultsWrapper>
       </Layout>
     </motion.div>
