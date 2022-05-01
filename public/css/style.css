@@ -872,9 +872,10 @@ Result Area Style
 
 .image-result {
   border-radius: 10px 0 0 10px;
+  position: relative;
 }
 
-/* .single-result .results-img span {
+/* .show-date {
   position: absolute;
   top: 30px;
   left: 30px;
@@ -884,17 +885,6 @@ Result Area Style
   display: inline-block;
   padding: 5px 20px;
 } */
-
-.show-date {
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  background-color: #171616;
-  color: #ffffff;
-  border-radius: 10px;
-  display: inline-block;
-  padding: 5px 20px;
-}
 
 .single-result .results-content {
   padding: 30px;

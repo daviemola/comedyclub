@@ -6,11 +6,15 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import * as AiIcons from "react-icons/ai";
+import moment from "moment";
+import Image from "next/image";
 
 const UpcomingShows = ({ shows, title }) => {
   const [swiper, setSwiper] = useState();
   const prevRef = useRef();
   const nextRef = useRef();
+
+  console.log(shows.success.slice(0, 1));
 
   useEffect(() => {
     if (swiper) {
@@ -76,25 +80,33 @@ const UpcomingShows = ({ shows, title }) => {
               }}
               className="mySwiper"
             >
-              {shows.map((show, index) => (
+              {shows.success.slice(0, 6).map((show, index) => (
                 <SwiperSlide key={index} className="mb-4">
                   <div>
                     <div className="single-upcoming wow fadeInUp delay-0-2s">
                       <a href="#">
-                        <img
-                          src={`${show.image}`}
-                          alt="Image"
-                          style={{ zIndex: 1 }}
+                        <Image
+                          src={show.external_image_link}
+                          width={370}
+                          height={220}
+                          quality={50}
+                          layout="responsive"
+                          alt={show.show_title}
+                          className="result-images"
                         />
                       </a>
-                      <div className="up-coming-content">
+                      <div
+                        className="up-coming-content"
+                        style={{ minHeight: "300px" }}
+                      >
                         <span>
-                          <i className="fa fa-calendar-o"></i> {show.date}
+                          <i className="fa fa-calendar-o"></i>{" "}
+                          {moment(show.start_data_time).format("MMM DD, YYYY")}
                         </span>
                         <h3>
-                          <a href="#">{show.name}</a>
+                          <a href="#">{show.show_title}</a>
                         </h3>
-                        <p>{`${show.city} · ${show.venue}`}</p>
+                        <p>{`${show.venue.city} · ${show.venue.venue_name}`}</p>
                         <a href="#" className="default-btn">
                           Buy Ticket
                         </a>

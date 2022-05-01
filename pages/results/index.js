@@ -7,10 +7,7 @@ import { motion } from "framer-motion";
 const https = require("https");
 
 const Home = ({ shows }) => {
-  let show = shows.success.slice(0, 5);
-  console.log(shows);
-  // shows.success.map((shoe) => console.log(shoe));
-  // console.log(shows.success);
+  // console.log(shows);
   const title = "";
   return (
     <motion.div initial="initial" animate="animate" exit={{ opacity: 0 }}>
@@ -18,7 +15,7 @@ const Home = ({ shows }) => {
         <Banner title={title} />
         <SearchForm />
         <ResultsWrapper>
-          <SingleResult shows={shows.success.slice(0, 5)} key={show.id} />
+          <SingleResult shows={shows.success.slice(0, 25)} />
         </ResultsWrapper>
       </Layout>
     </motion.div>
@@ -27,9 +24,6 @@ const Home = ({ shows }) => {
 
 export async function getStaticProps() {
   //Fetch for shows
-  // const res = await fetch(
-  //   "https://doingtimeapp.com/api/v1/show/getupcomingshows"
-  // );
   const httpsAgent = new https.Agent({
     rejectUnauthorized: false,
   });

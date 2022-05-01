@@ -7,10 +7,12 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import * as AiIcons from "react-icons/ai";
 
-const FeaturedShows = ({ shows, title }) => {
+const FeaturedPerformers = ({ shows, title }) => {
   const [swiper, setSwiper] = useState();
   const prevRef = useRef();
   const nextRef = useRef();
+
+  console.log(shows.success.slice(0, 1));
 
   useEffect(() => {
     if (swiper) {
@@ -74,17 +76,17 @@ const FeaturedShows = ({ shows, title }) => {
               }}
               className="mySwiper"
             >
-              {shows.map((show, index) => (
+              {shows.success.slice(0, 6).map((show, index) => (
                 <SwiperSlide key={index} className="mb-4">
                   <div className="mb-2">
                     <div className="single-featured wow fadeInUp delay-0-2s">
                       <a>
-                        <img src={`${show.image}`} alt="Image" />
+                        <img src="/img/featured/featured-1.jpg" alt="Image" />
                       </a>
                       <div className="up-coming-content">
                         <h3>
                           <Link href="#">
-                            <a>{`${show.name}`}</a>
+                            <a>{`${show.displayname}`}</a>
                           </Link>
                         </h3>
                       </div>
@@ -105,4 +107,4 @@ const FeaturedShows = ({ shows, title }) => {
   );
 };
 
-export default FeaturedShows;
+export default FeaturedPerformers;

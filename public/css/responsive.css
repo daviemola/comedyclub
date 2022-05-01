@@ -139,24 +139,24 @@
     top: 10px;
     font-size: 15px;
   } */
-  .show-date {
+  /* .show-date {
     left: auto;
     right: 24px;
     top: 10px;
     font-size: 15px;
-  }
+  } */
   .res-image {
     min-height: 350px;
   }
 
-  .row-results {
+  /* .row-results {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-right: 0px;
     margin-left: 0px;
-  }
+  } */
 }
 
 /* Min width 768px to Max width 991px */
@@ -324,18 +324,6 @@
 
   .res-image {
     min-height: 501px;
-  }
-
-  .bg-gradient {
-    position: "relative";
-    height: "450px";
-    max-height: "501px";
-    display: "flex";
-    justify-content: "center";
-    align-items: "center";
-    margin: "auto";
-    background-image: linear-gradient(red, yellow);
-    /* background-image: linear-gradient(to right, #251b4d, #713888); */
   }
 }
 
