@@ -29,7 +29,6 @@ export default function SearchResult({ data }) {
                           width={940}
                           alt={show.show_title}
                           quality={70}
-                          className="image-result"
                         />
                         <span className="show-date">
                           {moment(show.start_data_time).format("dddd h:mm a")}

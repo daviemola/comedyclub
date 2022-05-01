@@ -870,11 +870,6 @@ Result Area Style
   border-radius: 10px 0 0 10px;
 }
 
-.image-result {
-  border-radius: 10px 0 0 10px;
-  position: relative;
-}
-
 /* .show-date {
   position: absolute;
   top: 30px;
